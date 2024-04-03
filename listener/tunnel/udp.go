@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/Dreamacro/clash/adapter/inbound"
-	"github.com/Dreamacro/clash/common/pool"
-	C "github.com/Dreamacro/clash/constant"
-	"github.com/Dreamacro/clash/transport/socks5"
+	"github.com/Tension-Z/clash/adapter/inbound"
+	"github.com/Tension-Z/clash/common/pool"
+	C "github.com/Tension-Z/clash/constant"
+	"github.com/Tension-Z/clash/transport/socks5"
 )
 
 type PacketConn struct {

@@ -7,11 +7,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Dreamacro/clash/adapter"
-	"github.com/Dreamacro/clash/adapter/outboundgroup"
-	"github.com/Dreamacro/clash/component/profile/cachefile"
-	C "github.com/Dreamacro/clash/constant"
-	"github.com/Dreamacro/clash/tunnel"
+	"github.com/Tension-Z/clash/adapter"
+	"github.com/Tension-Z/clash/adapter/outboundgroup"
+	"github.com/Tension-Z/clash/component/profile/cachefile"
+	C "github.com/Tension-Z/clash/constant"
+	"github.com/Tension-Z/clash/tunnel"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/render"

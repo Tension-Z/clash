@@ -5,7 +5,7 @@ sidebarOrder: 8
 
 # The Profiling Engine
 
-https://github.com/Dreamacro/clash-tracing
+https://github.com/Tension-Z/clash-tracing
 
 ```yaml
 profile:

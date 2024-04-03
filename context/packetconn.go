@@ -3,7 +3,7 @@ package context
 import (
 	"net"
 
-	C "github.com/Dreamacro/clash/constant"
+	C "github.com/Tension-Z/clash/constant"
 
 	"github.com/gofrs/uuid/v5"
 )
