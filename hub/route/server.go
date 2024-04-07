@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"crypto/subtle"
 	"encoding/json"
+	"fmt"
 	"net"
 	"net/http"
 	"strings"
@@ -107,6 +108,7 @@ func safeEuqal(a, b string) bool {
 
 func authentication(next http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
+		fmt.Println("serverSecret:", serverSecret)
 		if serverSecret == "" {
 			next.ServeHTTP(w, r)
 			return

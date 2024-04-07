@@ -3,6 +3,7 @@ package route
 import (
 	"context"
 	"fmt"
+	"github.com/Tension-Z/clash/log"
 	"net/http"
 	"strconv"
 	"time"
@@ -91,6 +92,7 @@ func updateProxy(w http.ResponseWriter, r *http.Request) {
 	}
 
 	cachefile.Cache().SetSelected(proxy.Name(), req.Name)
+	log.Infoln("切换节点到 %v", req.Name)
 	render.NoContent(w, r)
 }
 

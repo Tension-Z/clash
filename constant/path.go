@@ -1,6 +1,7 @@
 package constant
 
 import (
+	"fmt"
 	"os"
 	P "path"
 	"path/filepath"
@@ -41,6 +42,7 @@ func SetHomeDir(root string) {
 
 // SetConfig is used to set the configuration file
 func SetConfig(file string) {
+	fmt.Println("配置文件地址", file)
 	Path.configFile = file
 }
 

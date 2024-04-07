@@ -51,6 +51,7 @@ func main() {
 		if !filepath.IsAbs(homeDir) {
 			currentDir, _ := os.Getwd()
 			homeDir = filepath.Join(currentDir, homeDir)
+
 		}
 		C.SetHomeDir(homeDir)
 	}
