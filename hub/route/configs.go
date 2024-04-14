@@ -44,8 +44,11 @@ func patchConfigs(w http.ResponseWriter, r *http.Request) {
 		IPv6        *bool              `json:"ipv6"`
 	}{}
 	if err := render.DecodeJSON(r.Body, &general); err != nil {
-		render.Status(r, http.StatusBadRequest)
-		render.JSON(w, r, ErrBadRequest)
+		render.Status(r, http.StatusOK)
+		render.JSON(w, r, render.M{
+			"code": 400,
+			"msg":  "参数错误",
+		})
 		return
 	}
 
@@ -78,7 +81,10 @@ func patchConfigs(w http.ResponseWriter, r *http.Request) {
 
 	listener.ReCreatePortsListeners(*ports, tunnel.TCPIn(), tunnel.UDPIn())
 
-	render.NoContent(w, r)
+	render.JSON(w, r, render.M{
+		"code": 200,
+		"msg":  "success",
+	})
 }
 
 func updateConfigs(w http.ResponseWriter, r *http.Request) {
