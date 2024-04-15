@@ -41,7 +41,10 @@ type ProxyDelayRequest struct {
 }
 
 func queryProxyDelay(w http.ResponseWriter, r *http.Request) {
-	data := &ProxyDelayRequest{}
+	data := &ProxyDelayRequest{
+		Timeout: 1000,
+		Url:     "http://www.gstatic.com/generate_204",
+	}
 	if err := render.DecodeJSON(r.Body, data); err != nil {
 		render.Status(r, http.StatusOK)
 		render.JSON(w, r, render.M{
@@ -49,12 +52,6 @@ func queryProxyDelay(w http.ResponseWriter, r *http.Request) {
 			"msg":  "参数错误",
 		})
 		return
-	}
-	if data.Timeout == 0 {
-		data.Timeout = 1000
-	}
-	if len(data.Url) == 0 {
-		data.Url = "http://www.gstatic.com/generate_204"
 	}
 	// 获取代理
 	proxy, err := queryProxyByName(data.Name)
@@ -86,11 +83,10 @@ func queryProxyDelay(w http.ResponseWriter, r *http.Request) {
 		})
 		return
 	}
-
 	render.JSON(w, r, render.M{
 		"code": 200,
 		"msg":  "success",
-		"data": render.M{"delay": delay, "meanDelay": meanDelay},
+		"data": render.M{"delay": delay, "meanDelay": meanDelay, "name": data.Name},
 	})
 }
 
