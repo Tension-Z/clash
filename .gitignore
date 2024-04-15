@@ -1,11 +1,3 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-bin/*
-
 # Test binary, build with `go test -c`
 *.test
 
@@ -28,6 +20,7 @@ test/config/cache*
 node_modules
 package-lock.json
 pnpm-lock.yaml
+yarn.lock
 
 # docs site cache
 docs/.vitepress/cache
@@ -37,3 +30,12 @@ docs/.vitepress/dist
 
 # 测试配置
 etc
+
+# 编译文件
+bind
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/*
